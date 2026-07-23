@@ -1,0 +1,11 @@
+:root{
+--hacey-navy:#2E3192;--hacey-navy-deep:#2A378D;--hacey-navy-dark:#1F2266;--hacey-navy-tint:#EAEAF6;
+--hacey-teal:#4BA699;--hacey-teal-dark:#3A857A;--hacey-teal-tint:#E6F3F1;
+--hacey-lime:#A6CE39;--hacey-lime-dark:#8AB122;--hacey-lime-tint:#F3F8E3;
+--gray-900:#1C1F2A;--gray-700:#3E4250;--gray-500:#6B7080;--gray-300:#C9CCD6;--gray-100:#F0F1F5;--gray-50:#F8F9FB;--white:#FFFFFF;
+--text-heading:var(--hacey-navy);--text-body:var(--gray-700);--text-muted:var(--gray-500);--text-on-dark:#FFFFFF;
+--surface-page:var(--white);--surface-alt:var(--gray-50);--surface-card:var(--white);--surface-brand:var(--hacey-navy);--surface-brand-soft:var(--hacey-navy-tint);
+--border-default:var(--gray-300);--border-subtle:var(--gray-100);
+--action-primary:var(--hacey-navy);--action-primary-hover:var(--hacey-navy-dark);--action-accent:var(--hacey-lime);--action-accent-hover:var(--hacey-lime-dark);--link:var(--hacey-teal-dark);
+--success:var(--hacey-lime-dark);--info:var(--hacey-teal);
+}
