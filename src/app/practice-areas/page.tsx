@@ -1,11 +1,15 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
-import { useReveal } from "@/hooks/useReveal";
+import { ClientReveal } from "@/components/ClientReveal";
+
+export const metadata: Metadata = {
+  title: "Practice Areas | HACEY LLC",
+  description: "Explore our primary focus areas: Health & Wellbeing, Economic Inclusion, Rights & Advocacy, and Environmental Sustainability.",
+};
 
 const areas: [string, string, string, string[]][] = [
   [
@@ -35,11 +39,10 @@ const areas: [string, string, string, string[]][] = [
 ];
 
 export default function PracticeAreas() {
-  useReveal();
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Nav active="Practice Areas" />
+    <ClientReveal>
+      <div className="flex flex-col min-h-screen">
+        <Nav active="Practice Areas" />
       <PageHero
         eyebrow="Where we work"
         title="Driving sustainable change across key development sectors."
@@ -89,5 +92,6 @@ export default function PracticeAreas() {
       <CtaBand />
       <Footer />
     </div>
+    </ClientReveal>
   );
 }

@@ -1,13 +1,17 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { IconFeature } from "@/components/IconFeature";
 import { Button } from "@/components/Button";
-import { useReveal } from "@/hooks/useReveal";
+import { ClientReveal } from "@/components/ClientReveal";
+
+export const metadata: Metadata = {
+  title: "Services | HACEY LLC",
+  description: "Explore our comprehensive suite of social impact solutions, including systems strengthening, fund management, and digital health initiatives.",
+};
 
 const services = [
   ["/assets/img/systems-strengthening.png", "Systems Strengthening", "Partnering with organizations to design robust systems that empower communities and improve service delivery — connecting strategy with the realities of implementation."],
@@ -19,10 +23,9 @@ const services = [
 ];
 
 export default function Services() {
-  useReveal();
-
   return (
-    <div className="flex flex-col min-h-screen">
+    <ClientReveal>
+      <div className="flex flex-col min-h-screen">
       <Nav active="Services" />
       <PageHero
         eyebrow="What we do"
@@ -86,5 +89,6 @@ export default function Services() {
       <CtaBand />
       <Footer />
     </div>
+    </ClientReveal>
   );
 }

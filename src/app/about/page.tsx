@@ -1,13 +1,17 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import { CountUp } from "@/components/CountUp";
 import { IconFeature } from "@/components/IconFeature";
-import { useReveal } from "@/hooks/useReveal";
+import { ClientReveal } from "@/components/ClientReveal";
+
+export const metadata: Metadata = {
+  title: "About Us | HACEY LLC",
+  description: "A social impact consultancy with over 17 years of experience partnering with organizations worldwide to catalyze meaningful, evidence-based change.",
+};
 
 const principles = [
   ["/assets/img/systems-strengthening.png", "Expertise & Experience", "A team of adept professionals across diverse fields, bringing a wealth of knowledge to unravel intricate challenges and forge tailor-made solutions."],
@@ -18,11 +22,10 @@ const principles = [
 ];
 
 export default function About() {
-  useReveal();
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Nav active="About" />
+    <ClientReveal>
+      <div className="flex flex-col min-h-screen">
+        <Nav active="About" />
       <PageHero
         eyebrow="About HACEY LLC"
         title="Pioneering social development solutions across borders."
@@ -122,5 +125,6 @@ export default function About() {
       <CtaBand />
       <Footer />
     </div>
+    </ClientReveal>
   );
 }

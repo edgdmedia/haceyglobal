@@ -1,6 +1,5 @@
-"use client";
-
 import React from "react";
+import { Metadata } from "next";
 import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -10,7 +9,12 @@ import { CountUp } from "@/components/CountUp";
 import { Button } from "@/components/Button";
 import { IconFeature } from "@/components/IconFeature";
 import { Badge } from "@/components/Badge";
-import { useReveal } from "@/hooks/useReveal";
+import { ClientReveal } from "@/components/ClientReveal";
+
+export const metadata: Metadata = {
+  title: "HACEY LLC | Social Impact Consultancy",
+  description: "catalyzing sustainable change. We partner with organizations to build digital solutions, strengthen systems, and measure real-world social impact.",
+};
 
 const services = [
   ["/assets/img/systems-strengthening.png", "Systems Strengthening", "Partnering with organizations to design robust systems that empower communities and improve service delivery."],
@@ -23,9 +27,9 @@ const services = [
 
 const practice = [
   ["/assets/img/practice-health.jpg", "Health & Wellbeing", "Ensuring that individuals and communities have access to basic physical, mental, and social well-being services."],
-  ["/assets/img/practice-economic.jpg", "Economic Inclusion", "Designing and supporting systems that give low-income and marginalized people opportunities to participate in and benefit from economic activities."],
-  ["/assets/img/practice-rights.jpg", "Rights & Advocacy", "Strengthening individuals, communities, organizations, and movements to demand and access their rights."],
-  ["/assets/img/practice-environment.jpg", "Environmental Sustainability", "Protecting natural resources and ecosystems to ensure they can support current and future generations."],
+  ["/assets/img/practice-economic.jpg", "Economic Inclusion", "Empowering individuals through entrepreneurship support, financial inclusion, and workforce preparedness."],
+  ["/assets/img/practice-rights.jpg", "Rights & Advocacy", "Promoting human rights, protecting vulnerable groups, and building advocates to challenge gender-based violence."],
+  ["/assets/img/practice-environment.jpg", "Environmental Sustainability", "Fostering climate resilience, sanitation, water resource management, and conservation of ecosystems."],
 ];
 
 const stats: [number, string, string][] = [
@@ -47,11 +51,10 @@ const testimonials = [
 ];
 
 export default function Home() {
-  useReveal();
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Nav active="Home" />
+    <ClientReveal>
+      <div className="flex flex-col min-h-screen">
+        <Nav active="Home" />
 
       {/* Hero Section */}
       <section className="hero relative bg-hacey-navy text-white overflow-hidden">
@@ -293,5 +296,6 @@ export default function Home() {
       <CtaBand />
       <Footer />
     </div>
+    </ClientReveal>
   );
 }
