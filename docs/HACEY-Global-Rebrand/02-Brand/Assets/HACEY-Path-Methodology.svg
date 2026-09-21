@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">The HACEY Path</title>
+  <desc id="desc">Seven connected stages: Understand, Diagnose, Design, Build, Deploy, Enable and Optimise.</desc>
+  <rect width="1600" height="900" fill="#111c24"/>
+  <text x="100" y="112" fill="#b9f462" font-family="Arial, sans-serif" font-size="22" letter-spacing="4">THE HACEY PATH</text>
+  <text x="100" y="190" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="600">From organisational challenge</text>
+  <text x="100" y="252" fill="#ffffff" font-family="Arial, sans-serif" font-size="56" font-weight="600">to sustained capability.</text>
+  <line x1="148" y1="505" x2="1452" y2="505" stroke="#607178" stroke-width="2"/>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(150 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">01</text><text x="-52" y="80" fill="#fff" font-size="24">Understand</text><text x="-52" y="116" fill="#9caaaf" font-size="16">Context and evidence</text></g>
+    <g transform="translate(365 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">02</text><text x="-45" y="80" fill="#fff" font-size="24">Diagnose</text><text x="-45" y="116" fill="#9caaaf" font-size="16">Root causes and choices</text></g>
+    <g transform="translate(580 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">03</text><text x="-36" y="80" fill="#fff" font-size="24">Design</text><text x="-36" y="116" fill="#9caaaf" font-size="16">Target state and roadmap</text></g>
+    <g transform="translate(795 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">04</text><text x="-29" y="80" fill="#fff" font-size="24">Build</text><text x="-29" y="116" fill="#9caaaf" font-size="16">Useful increments</text></g>
+    <g transform="translate(1010 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">05</text><text x="-36" y="80" fill="#fff" font-size="24">Deploy</text><text x="-36" y="116" fill="#9caaaf" font-size="16">Safe operational release</text></g>
+    <g transform="translate(1225 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">06</text><text x="-37" y="80" fill="#fff" font-size="24">Enable</text><text x="-37" y="116" fill="#9caaaf" font-size="16">Capability transfer</text></g>
+    <g transform="translate(1440 505)"><circle r="25" fill="#b9f462"/><text x="0" y="7" text-anchor="middle" fill="#111c24" font-size="18" font-weight="700">07</text><text x="-95" y="80" fill="#fff" font-size="24">Optimise</text><text x="-95" y="116" fill="#9caaaf" font-size="16">Measure and improve</text></g>
+  </g>
+  <rect x="100" y="756" width="1400" height="1" fill="#35464e"/>
+  <text x="100" y="812" fill="#9caaaf" font-family="Arial, sans-serif" font-size="17">Evidence</text>
+  <text x="742" y="812" fill="#9caaaf" font-family="Arial, sans-serif" font-size="17">Implementation</text>
+  <text x="1300" y="812" fill="#9caaaf" font-family="Arial, sans-serif" font-size="17">Sustained value</text>
+</svg>
