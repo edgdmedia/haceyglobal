@@ -70,7 +70,7 @@ Recipient and sender are `vars` in `wrangler.jsonc`:
 | Var | Default |
 |---|---|
 | `CONTACT_TO_EMAIL` | `isaiah@haceyglobal.com` |
-| `CONTACT_FROM_EMAIL` | `website@haceyglobal.com` |
+| `CONTACT_FROM_EMAIL` | `noreply@haceyglobal.com` |
 
 **Before the form can deliver in production**, the sender domain must be onboarded
 onto Email Sending once, by someone with the Email permission on the Cloudflare

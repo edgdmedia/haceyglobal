@@ -23,7 +23,7 @@
 		// Where contact form submissions are delivered.
 		"CONTACT_TO_EMAIL": "isaiah@haceyglobal.com",
 		// Sender address. Its domain must be onboarded to Email Sending.
-		"CONTACT_FROM_EMAIL": "website@haceyglobal.com"
+		"CONTACT_FROM_EMAIL": "noreply@haceyglobal.com"
 	},
 	// Email Sending. The domain in CONTACT_FROM_EMAIL must be onboarded first:
 	//   npx wrangler email sending enable haceyglobal.com

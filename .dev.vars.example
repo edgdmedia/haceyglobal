@@ -6,7 +6,7 @@
 # wrangler.jsonc and can be overridden here.
 #
 # CONTACT_TO_EMAIL=isaiah@haceyglobal.com
-# CONTACT_FROM_EMAIL=website@haceyglobal.com
+# CONTACT_FROM_EMAIL=noreply@haceyglobal.com
 #
 # By default `wrangler dev` does NOT send real mail: Miniflare writes each
 # message to .wrangler/tmp/email/. To send for real from local dev, add

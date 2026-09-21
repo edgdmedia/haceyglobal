@@ -22,6 +22,6 @@ export function ContactForm() {
     <label className="honeypot" aria-hidden="true">Website<input name="website" tabIndex={-1} autoComplete="off" /></label>
     <label className="consent"><input type="checkbox" name="consent" required /> <span>I agree that HACEY Global may use this information to respond to my enquiry. See the <a href="/privacy">Privacy Policy</a>.</span></label>
     <button type="submit" disabled={status === 'sending'} className="button button-accent submit-button">{status === 'sending' ? 'Sending…' : 'Send enquiry'} <ArrowRight /></button>
-    <p id="form-status" role="status" className="form-status">{status === 'sent' && 'Thank you. Your enquiry has been sent.'}{status === 'error' && <>The secure form is not configured in this preview. Please email <a href="mailto:isaiah@haceyglobal.com">isaiah@haceyglobal.com</a>.</>}</p>
+    <p id="form-status" role="status" className="form-status">{status === 'sent' && 'Thank you. Your enquiry has been sent.'}{status === 'error' && <>Your enquiry could not be sent. Please try again, or email <a href="mailto:isaiah@haceyglobal.com">isaiah@haceyglobal.com</a> directly.</>}</p>
   </form>;
 }
