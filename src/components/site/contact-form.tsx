@@ -8,9 +8,11 @@ const categories = ['Strategy and Transformation', 'AI and Data', 'Cloud', 'Ente
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   async function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault(); setStatus('sending'); const form = new FormData(event.currentTarget);
-    const data = Object.fromEntries(form.entries());
-    try { const response = await fetch('/api/contact', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) }); if (!response.ok) throw new Error(); setStatus('sent'); event.currentTarget.reset(); } catch { setStatus('error'); }
+    event.preventDefault(); setStatus('sending');
+    // Hold the element: React clears event.currentTarget after the first await.
+    const element = event.currentTarget;
+    const data = Object.fromEntries(new FormData(element).entries());
+    try { const response = await fetch('/api/contact', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(data) }); if (!response.ok) throw new Error(); setStatus('sent'); element.reset(); } catch { setStatus('error'); }
   }
   return <form className="contact-form" onSubmit={submit} aria-describedby="form-status">
     <div className="form-row"><label>First name<input name="firstName" autoComplete="given-name" required /></label><label>Last name<input name="lastName" autoComplete="family-name" required /></label></div>
