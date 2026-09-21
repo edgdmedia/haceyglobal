@@ -41,14 +41,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="proof-band">
-        <div className="shell proof-grid">
-          <p><strong>Since 2007</strong><span>Established delivery experience</span></p>
-          <p><strong>Austin, Texas</strong><span>Serving North America and Europe</span></p>
-          <p><strong>Built to transfer</strong><span>Knowledge and capability stay with your team</span></p>
-        </div>
-      </section>
-
       <section className="section shell">
         <div className="section-intro">
           <p className="eyebrow">What we do</p>
@@ -104,6 +96,14 @@ export default function Home() {
       </section>
 
       <section className="why-band"><div className="shell why-grid"><div><p className="eyebrow light">Why HACEY Global</p><h2>Practical enough to implement. Deliberate enough to last.</h2></div><div><p>We connect five disciplines that transformation programmes often separate.</p><ul><li>Strategy tied to operating reality</li><li>Technology shaped around people and process</li><li>Programme control across decisions and dependencies</li><li>Adoption measured through performance</li><li>Capability transferred into the organisation</li></ul></div></div></section>
+
+      <section className="proof-band">
+        <div className="shell proof-grid">
+          <p><strong>Since 2007</strong><span>Established delivery experience</span></p>
+          <p><strong>Austin, Texas</strong><span>Serving North America and Europe</span></p>
+          <p><strong>Built to transfer</strong><span>Knowledge and capability stay with your team</span></p>
+        </div>
+      </section>
 
       <section className="section shell closing-cta">
         <div>
