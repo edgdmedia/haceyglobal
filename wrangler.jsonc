@@ -2,6 +2,10 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"main": ".open-next/worker.js",
 	"name": "haceyglobal",
+	// Pinned so a deploy cannot land in the wrong Cloudflare account.
+	// This is the account that owns the haceyglobal.com zone and its
+	// Email Sending onboarding; the EMAIL binding only works here.
+	"account_id": "af273e5d58efe45fa36724c5a3e61052",
 	"compatibility_date": "2026-04-15",
 	"compatibility_flags": [
 		"nodejs_compat",
