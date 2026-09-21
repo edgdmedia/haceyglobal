@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HACEY Global
 
-## Getting Started
+The HACEY Global corporate website: Next.js 16 (App Router, React Server
+Components) and Tailwind CSS 4, deployed to Cloudflare Workers through
+`@opennextjs/cloudflare`.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Script | What it does |
+|---|---|
+| `npm run dev` | Next dev server on port 3000 |
+| `npm run build` | Production build and type check |
+| `npm run lint` | ESLint over the project source |
+| `npm run preview` | Build through OpenNext and serve on the local Workers runtime |
+| `npm run deploy` | Build and deploy to the Cloudflare Worker `haceyglobal` |
 
-## Learn More
+Use `npm run preview` before deploying. The dev server runs on Node, production
+runs on a Cloudflare Worker, and `/api/contact` plus the `next/font` assets only
+exercise the Worker path under `preview`.
 
-To learn more about Next.js, take a look at the following resources:
+## Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+17 static routes and 5 dynamic templates that expand to 32 detail pages, for 49
+URLs in total plus `/sitemap.xml` and `/robots.txt`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Marketing** — `/`, `/about`, `/approach`, `/technology`, `/work`, `/contact`
+- **Collections** — `/capabilities`, `/solutions`, `/industries`, `/products`, `/insights`
+- **Detail pages** — `/capabilities/[slug]`, `/solutions/[slug]`, `/industries/[slug]`,
+  `/products/[slug]`, `/insights/[slug]`
+- **Governance** — `/privacy`, `/cookies`, `/terms`, `/accessibility`,
+  `/responsible-ai`, `/security`
 
-## Deploy on Vercel
+Retired URLs from the previous site redirect permanently: `/services` and
+`/practice-areas` to `/capabilities`, `/impact` to `/work`, and `/privacy-policy`
+to `/privacy`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Editing content
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Structured content lives in `src/lib/content.ts` — the `capabilities`, `solutions`,
+`industries`, `products`, `technologies`, `articles` and `approachStages` exports.
+The collection pages, detail pages, metadata and sitemap all derive from it, so
+adding an entry publishes a page.
+
+To add an insight article, append a record to `articles` with a unique lowercase
+hyphenated slug. Where a claim is factual or standards-based, add a source link in
+`src/app/insights/[slug]/page.tsx`. Run a build and review the new route before
+publishing.
+
+Page-specific copy is edited in the route file itself under `src/app/`.
+
+## Contact form
+
+`/api/contact` forwards submissions to the URL in `CONTACT_FORM_ENDPOINT`. **This is
+not yet configured** — until it is set, the route returns HTTP 503 and the form
+reports a failure. Everything else on the site works.
+
+Locally, copy `.dev.vars.example` to `.dev.vars` and fill it in. For production:
+
+```bash
+npx wrangler secret put CONTACT_FORM_ENDPOINT
+```
+
+## Project layout
+
+```
+src/app/         routes, layout, globals.css, sitemap.ts, robots.ts, api/contact
+src/components/  site components (header, footer, hero, card grid, forms)
+src/lib/         content.ts
+public/          favicon.svg, og.png
+```
+
+The design is deliberately image-free — no `<img>` or `next/image` — so type,
+spacing and colour carry the layout. Custom classes (`.shell`, `.article-shell`,
+`.lede`, `.eyebrow`, `.button-accent`) are defined in `src/app/globals.css`
+alongside the Tailwind theme tokens.
+
+## History
+
+The previous HACEY LLC site is archived at `docs/archive/legacy-site/` and tagged
+`v1-legacy-site` (branch `legacy/v1-site`). The rebrand handover this site was built
+from is kept at `docs/HACEY-Global-Rebrand/`. See
+`docs/superpowers/specs/2026-09-21-rebrand-port-design.md` for the port's design.
