@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Archived legacy site and the client rebrand handover. Neither is built
+    // by this project, and the archived code's "@/*" paths no longer resolve.
+    "docs/**",
+    ".open-next/**",
   ]),
 ]);
 
