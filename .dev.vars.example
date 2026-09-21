@@ -1,0 +1,4 @@
+# Endpoint that /api/contact forwards submissions to.
+# Unset: the route returns HTTP 503 and the contact form reports a failure.
+# Production: set as a Worker secret with `wrangler secret put CONTACT_FORM_ENDPOINT`.
+CONTACT_FORM_ENDPOINT=
