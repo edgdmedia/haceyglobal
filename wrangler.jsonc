@@ -19,6 +19,20 @@
 			"service": "haceyglobal"
 		}
 	],
+	"vars": {
+		// Where contact form submissions are delivered.
+		"CONTACT_TO_EMAIL": "isaiah@haceyglobal.com",
+		// Sender address. Its domain must be onboarded to Email Sending.
+		"CONTACT_FROM_EMAIL": "website@haceyglobal.com"
+	},
+	// Email Sending. The domain in CONTACT_FROM_EMAIL must be onboarded first:
+	//   npx wrangler email sending enable haceyglobal.com
+	// Add "remote": true here to make `wrangler dev` send real mail locally.
+	"send_email": [
+		{
+			"name": "EMAIL"
+		}
+	],
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
