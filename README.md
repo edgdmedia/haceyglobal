@@ -59,15 +59,35 @@ Page-specific copy is edited in the route file itself under `src/app/`.
 
 ## Contact form
 
-`/api/contact` forwards submissions to the URL in `CONTACT_FORM_ENDPOINT`. **This is
-not yet configured** — until it is set, the route returns HTTP 503 and the form
-reports a failure. Everything else on the site works.
+`/api/contact` validates the submission and emails it via **Cloudflare Email
+Sending** (the `EMAIL` binding in `wrangler.jsonc`) — no API keys involved. The
+submitter's address is set as `Reply-To`, so replying from the inbox goes straight
+back to them. A hidden `website` honeypot field is accepted silently to starve bots
+of a signal.
 
-Locally, copy `.dev.vars.example` to `.dev.vars` and fill it in. For production:
+Recipient and sender are `vars` in `wrangler.jsonc`:
+
+| Var | Default |
+|---|---|
+| `CONTACT_TO_EMAIL` | `isaiah@haceyglobal.com` |
+| `CONTACT_FROM_EMAIL` | `website@haceyglobal.com` |
+
+**Before the form can deliver in production**, the sender domain must be onboarded
+onto Email Sending once, by someone with the Email permission on the Cloudflare
+account:
 
 ```bash
-npx wrangler secret put CONTACT_FORM_ENDPOINT
+npx wrangler email sending enable haceyglobal.com
+npx wrangler email sending list        # confirm it appears
 ```
+
+That adds the SPF/DKIM/DMARC records the domain needs. Until it is done, sends fail
+and the route returns HTTP 502.
+
+Local `wrangler dev` does **not** send real mail — Miniflare writes each message to
+`.wrangler/tmp/email/` as `.txt` and `.html`, which is the easiest way to check
+formatting. To send for real from local dev, add `"remote": true` to the
+`send_email` binding.
 
 ## Project layout
 
