@@ -1,0 +1,13 @@
+# Local overrides for the Cloudflare bindings in wrangler.jsonc.
+# Copy to .dev.vars (gitignored) to change them for `wrangler dev`.
+#
+# Contact form delivery is handled by the EMAIL binding (Cloudflare Email
+# Sending), not by an API key. Recipient and sender are set as vars in
+# wrangler.jsonc and can be overridden here.
+#
+# CONTACT_TO_EMAIL=isaiah@haceyglobal.com
+# CONTACT_FROM_EMAIL=noreply@haceyglobal.com
+#
+# By default `wrangler dev` does NOT send real mail: Miniflare writes each
+# message to .wrangler/tmp/email/. To send for real from local dev, add
+# "remote": true to the send_email binding in wrangler.jsonc.
