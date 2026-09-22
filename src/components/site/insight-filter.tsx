@@ -18,6 +18,13 @@ export function InsightFilter({ articles, categories }: { articles: Article[]; c
     return map;
   }, [articles]);
 
+  // Topics with articles lead, empty ones follow. Array.prototype.sort is stable,
+  // so the original order is kept within each group.
+  const ordered = useMemo(
+    () => [...categories].sort((a, b) => Number((counts.get(b) ?? 0) > 0) - Number((counts.get(a) ?? 0) > 0)),
+    [categories, counts],
+  );
+
   const visible = active === ALL ? articles : articles.filter(article => article.category === active);
 
   return (
@@ -32,7 +39,7 @@ export function InsightFilter({ articles, categories }: { articles: Article[]; c
           >
             All <span className="category-count">{articles.length}</span>
           </button>
-          {categories.map(category => {
+          {ordered.map(category => {
             const count = counts.get(category) ?? 0;
             return (
               <button
