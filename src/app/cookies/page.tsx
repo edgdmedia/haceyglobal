@@ -6,4 +6,4 @@ const sections = [
   { title: 'Consent and control', body: ['Where required, non-essential cookies should remain disabled until a visitor provides consent. Visitors should be able to change or withdraw that choice as easily as they gave it.'] },
   { title: 'Production register', body: ['Before launch, complete a cookie inventory naming each cookie, provider, purpose, duration and category. Update this policy and the consent interface when tools change.'] },
 ];
-export default function Page() { return <PolicyPage title="Cookie Policy" summary="The intended approach to cookies and similar technologies on the HACEY Global website." sections={sections} />; }
+export default function Page() { return <PolicyPage review={false} title="Cookie Policy" summary="The intended approach to cookies and similar technologies on the HACEY Global website." sections={sections} />; }
