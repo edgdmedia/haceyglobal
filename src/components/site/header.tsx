@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Menu } from 'lucide-react';
 
 const links = [
@@ -13,8 +14,8 @@ const links = [
 export function Header() {
   return (
     <header className="site-header">
-      <Link href="/" className="wordmark" aria-label="HACEY Global home">
-        <span className="wordmark-mark">H</span><span>HACEY <b>GLOBAL</b></span>
+      <Link href="/" className="brand-logo" aria-label="HACEY Global home">
+        <Image src="/brand/hacey-global-horizontal.png" alt="HACEY Global" width={700} height={104} priority />
       </Link>
       <nav className="desktop-nav" aria-label="Primary navigation">
         {links.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}

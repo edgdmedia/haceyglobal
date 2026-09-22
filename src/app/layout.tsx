@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: { default: 'HACEY Global | Strategy, Technology and Transformation', template: '%s | HACEY Global' },
   description: 'HACEY Global helps organisations diagnose complex challenges, implement practical technology and build the internal capability to sustain measurable change.',
   metadataBase: new URL('https://haceyglobal.com'),
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/brand/emblem-32.png', apple: '/brand/emblem-180.png' },
   openGraph: { title: 'HACEY Global', description: 'Make complex transformation work in practice.', type: 'website', images: [{ url: '/og.png', width: 1200, height: 630, alt: 'HACEY Global - Make complex transformation work in practice.' }] },
   twitter: { card: 'summary_large_image', title: 'HACEY Global', description: 'Make complex transformation work in practice.', images: ['/og.png'] },
 };

@@ -6,7 +6,9 @@ export function DetailPage({ item, type }: { item: DetailItem; type: string }) {
   return (
     <>
       <section className="detail-hero shell">
-        <p className="eyebrow">{item.eyebrow || type}</p><h1>{item.title}</h1><p className="lede">{item.summary}</p>
+        <p className="eyebrow">{item.eyebrow || type}</p>
+        <h1>{item.title}</h1>
+        <p className="lede">{item.summary}</p>
       </section>
       {item.challenge && <section className="statement-band"><div className="shell"><p className="eyebrow light">The challenge</p><h2>{item.challenge}</h2></div></section>}
       <section className="section shell detail-columns">
