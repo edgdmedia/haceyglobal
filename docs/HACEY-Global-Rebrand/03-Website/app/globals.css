@@ -293,7 +293,7 @@ p { line-height: 1.62; color: #495963; }
 .mobile-menu nav a { display: block; padding: 13px 6px; border-bottom: 1px solid rgba(255,255,255,.13); }
 .page-hero { min-height: 560px; padding-block: 110px 95px; display: grid; grid-template-columns: .4fr 1.45fr .65fr; gap: 44px; align-items: start; }
 .page-hero h1, .detail-hero h1 { max-width: 850px; }
-.page-hero-side { padding-top: 105px; }
+.page-hero-side { padding-top: 15px; }
 .page-hero-side p { font-size: 18px; }
 .page-hero-side .text-link { margin-top: 18px; }
 .detail-card-grid { width: min(1180px, calc(100% - 48px)); margin: 0 auto 125px; display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
